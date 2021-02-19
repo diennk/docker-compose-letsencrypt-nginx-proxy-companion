@@ -154,6 +154,14 @@ docker run -d -e VIRTUAL_HOST=your.domain.com \
               httpd:alpine
 ```
 
+```bash
+docker run -d -e VIRTUAL_HOST=nginxproxytest.zerobank.net \
+              -e LETSENCRYPT_HOST=nginxproxytest.zerobank.net \
+              -e LETSENCRYPT_EMAIL=khanhdien@gmail.com \
+              --network=webproxy \
+              --name my_app \
+              httpd:alpine
+```
 > You don´t need to open port *443* in your container, the certificate validation is managed by the web proxy.
 
 
